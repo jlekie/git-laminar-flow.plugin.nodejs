@@ -48,8 +48,8 @@ const createPlugin: PluginHandler = (options) => {
                 stdout?.write(`Updated package file written to ${npmPackagePath}\n`);
             }
 
-            if (!config.parentConfig)
-                await config.exec('yarn install', { stdout, dryRun })
+            // if (!config.parentConfig)
+            //     await config.exec('yarn install', { stdout, dryRun })
         },
         updateVersion: async (oldVersion, newVersion, { config, stdout, dryRun }) => {
             const npmPackagePath = Path.resolve(config.path, parsedOptions.packagePath);
